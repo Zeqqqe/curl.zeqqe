@@ -5,9 +5,7 @@ const htmlContent = `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>zeqqe.dev – Portfolio</title>
-
   <link rel="icon" href="https://www.kernel.org/theme/images/logos/favicon.png" type="image/png" />
-
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -24,7 +22,6 @@ const htmlContent = `<!DOCTYPE html>
       --card-bg: #ffffff;
       --border: #ddd2c2;
     }
-
     body.dark {
       --bg: #181a1f;
       --text: #d1d5db;
@@ -34,7 +31,6 @@ const htmlContent = `<!DOCTYPE html>
       --card-bg: #20222b;
       --border: #2a2d35;
     }
-
     body {
       font-family: "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg);
@@ -44,7 +40,6 @@ const htmlContent = `<!DOCTYPE html>
       transition: background-color 0.3s, color 0.3s;
       line-height: 1.6;
     }
-
     header, footer {
       background-color: var(--header-bg);
       border-bottom: 1px solid var(--border);
@@ -53,12 +48,10 @@ const htmlContent = `<!DOCTYPE html>
       justify-content: space-between;
       align-items: center;
     }
-
     header h1 {
       margin: 0;
       font-size: 1.6rem;
     }
-
     nav ul {
       list-style: none;
       padding: 0;
@@ -66,7 +59,6 @@ const htmlContent = `<!DOCTYPE html>
       display: flex;
       gap: 1.5rem;
     }
-
     nav a {
       text-decoration: none;
       color: var(--link);
@@ -76,7 +68,6 @@ const htmlContent = `<!DOCTYPE html>
     nav a:hover {
       color: var(--link-hover);
     }
-
     #mode-toggle {
       background: none;
       border: 1px solid var(--border);
@@ -93,13 +84,11 @@ const htmlContent = `<!DOCTYPE html>
     body.dark #mode-toggle:hover {
       background: rgba(255,255,255,0.05);
     }
-
     main {
       padding: 2rem;
       max-width: 900px;
       margin: 0 auto;
     }
-
     section {
       margin-bottom: 3rem;
       background: var(--card-bg);
@@ -108,14 +97,12 @@ const htmlContent = `<!DOCTYPE html>
       border: 1px solid var(--border);
       transition: background 0.3s, border 0.3s;
     }
-
     section h2 {
       font-size: 1.3rem;
       border-bottom: 1px solid var(--border);
       padding-bottom: 0.3rem;
       margin-bottom: 1rem;
     }
-
     a {
       color: var(--link);
       transition: color 0.2s;
@@ -124,7 +111,6 @@ const htmlContent = `<!DOCTYPE html>
       text-decoration: underline;
       color: var(--link-hover);
     }
-
     .project-list li {
       margin-bottom: 1.2rem;
       padding: 0.8rem;
@@ -132,11 +118,9 @@ const htmlContent = `<!DOCTYPE html>
       background: rgba(156, 123, 70, 0.1);
       border-radius: 4px;
     }
-
     body.dark .project-list li {
       background: rgba(88, 101, 242, 0.08);
     }
-
     footer {
       text-align: center;
       padding: 1rem;
@@ -173,7 +157,6 @@ const htmlContent = `<!DOCTYPE html>
       <i class="fas fa-sun"></i>
     </button>
   </header>
-
   <main>
     <section id="about">
       <h2>ABOUT</h2>
@@ -181,7 +164,6 @@ const htmlContent = `<!DOCTYPE html>
         This is an open-source portfolio documenting my projects and development principles. It showcases curated work reflecting clarity and structure, both in code and interface.
       </p>
     </section>
-
     <section id="projects">
       <h2>PROJECTS</h2>
       <ul id="project-list" class="project-list">
@@ -192,7 +174,6 @@ const htmlContent = `<!DOCTYPE html>
         <a href="https://github.com/Zeqqqe/zeqqe.github.io" target="_blank">Zeqqqe/zeqqe.github.io</a>
       </p>
     </section>
-
     <section id="contact">
       <h2>CONTACT</h2>
       <ul>
@@ -204,13 +185,11 @@ const htmlContent = `<!DOCTYPE html>
       </ul>
     </section>
   </main>
-
   <footer>
     <small>
       <a href="copyleft.html">🄯 2025 zeqqe — All content on my GitHub is open source.</a>
     </small>
   </footer>
-
   <script>
     const reposToShow = [
       "Zalgoo/Zoidberg",
@@ -218,7 +197,6 @@ const htmlContent = `<!DOCTYPE html>
       "Zalgoo/ASCII"
     ];
     const projectList = document.getElementById("project-list");
-
     projectList.innerHTML = "<li>Loading projects...</li>";
     Promise.all(
       reposToShow.map(repo =>
@@ -240,21 +218,17 @@ const htmlContent = `<!DOCTYPE html>
         console.error(err);
         projectList.innerHTML = "<li>Error loading projects.</li>";
       });
-
     const toggleBtn = document.getElementById("mode-toggle");
     const icon = toggleBtn.querySelector("i");
-
     function setDarkMode(enabled) {
       document.body.classList.toggle("dark", enabled);
       icon.className = enabled ? "fas fa-sun" : "fas fa-moon";
       localStorage.setItem("darkMode", enabled);
     }
-
     toggleBtn.addEventListener("click", () => {
       const enabled = !document.body.classList.contains("dark");
       setDarkMode(enabled);
     });
-
     const savedMode = localStorage.getItem("darkMode");
     if (savedMode !== null) {
       setDarkMode(savedMode === "true");
@@ -265,22 +239,15 @@ const htmlContent = `<!DOCTYPE html>
 </body>
 </html>
 `;
-
-// This is the core logic that handles the request.
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
 });
-
 async function handleRequest(request) {
   const userAgent = request.headers.get("user-agent") || "";
   const url = new URL(request.url);
-
-  // This check ensures the logic only runs for the root URL
   if (url.pathname === "/") {
     if (userAgent.includes("curl")) {
       const textContent = `Welcome to www.zeqqe.dev, it seems you have use curl on this site, a very strange action to not return HTML.
-
-
                                  #
 ####  ##   ## #  ## #  ##     ## #  ##  #   #
    # #  # #  ## #  ## #  #   #  ## #  # #   #
@@ -290,27 +257,19 @@ async function handleRequest(request) {
 ####  ##   ## #  ## #  ##  #  ## #  ##    #
               #     #
               #     #
-
-
-
 LINKS:
 GitHub — https://github.com/Zeqqqe
 Discord — @zeqqqe
 Email — contact@zeqqe.dev 
-
 —————————————————————————
-
 INFO:
 I am a Linux live environment user, and I have accumulated over 13 Gigabytes of Linux lice ISOs.`;
-
-      // Respond directly with the plain text
       return new Response(textContent, {
         headers: {
           "Content-Type": "text/plain",
         },
       });
     } else {
-      // Respond directly with the HTML content
       return new Response(htmlContent, {
         headers: {
           "Content-Type": "text/html",
@@ -318,7 +277,5 @@ I am a Linux live environment user, and I have accumulated over 13 Gigabytes of 
       });
     }
   }
-
-  // Fallback for all other requests that are not to the root path
   return new Response("Not Found", { status: 404 });
 }
