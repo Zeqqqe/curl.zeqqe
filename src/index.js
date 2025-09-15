@@ -247,7 +247,7 @@ async function handleRequest(request) {
   const url = new URL(request.url);
   if (url.pathname === "/") {
     if (userAgent.includes("curl")) {
-      const textContent = `Welcome to www.zeqqe.dev, it seems you have use curl on this site, a very strange action to not return HTML.
+      const textContent = `Welcome to zeqqe.dev, it seems you have use curl on this site, a very strange action to not return HTML.
                                  #
 ####  ##   ## #  ## #  ##     ## #  ##  #   #
    # #  # #  ## #  ## #  #   #  ## #  # #   #
@@ -260,7 +260,7 @@ async function handleRequest(request) {
 LINKS:
 GitHub — https://github.com/Zeqqqe
 Discord — @zeqqqe
-Email — contact@zeqqe.dev 
+Email — mailto:contact@zeqqe.dev 
 —————————————————————————
 INFO:
 I am a Linux live environment user, and I have accumulated over 13 Gigabytes of Linux lice ISOs.`;
