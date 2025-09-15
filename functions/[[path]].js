@@ -1,4 +1,4 @@
-// `index.html` content as a JavaScript string
+// This is the HTML content of your site, stored as a JavaScript string.
 const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -266,6 +266,7 @@ const htmlContent = `<!DOCTYPE html>
 </html>
 `;
 
+// This is the core logic that handles the request.
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
 });
@@ -274,6 +275,7 @@ async function handleRequest(request) {
   const userAgent = request.headers.get("user-agent") || "";
   const url = new URL(request.url);
 
+  // This check ensures the logic only runs for the root URL
   if (url.pathname === "/") {
     if (userAgent.includes("curl")) {
       const textContent = `Welcome to www.zeqqe.dev, it seems you have use curl on this site, a very strange action to not return HTML.
@@ -301,13 +303,14 @@ Email — contact@zeqqe.dev
 INFO:
 I am a Linux live environment user, and I have accumulated over 13 Gigabytes of Linux lice ISOs.`;
 
+      // Respond directly with the plain text
       return new Response(textContent, {
         headers: {
           "Content-Type": "text/plain",
         },
       });
     } else {
-      // Return the full HTML content for browsers
+      // Respond directly with the HTML content
       return new Response(htmlContent, {
         headers: {
           "Content-Type": "text/html",
@@ -316,6 +319,6 @@ I am a Linux live environment user, and I have accumulated over 13 Gigabytes of 
     }
   }
 
-  // Handle other paths
+  // Fallback for all other requests that are not to the root path
   return new Response("Not Found", { status: 404 });
 }
