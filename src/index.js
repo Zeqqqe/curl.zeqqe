@@ -664,13 +664,11 @@ const fundingContent = `<!DOCTYPE html>
 </html>`;
 
 const textContent = `Welcome to zeqqe.dev, it seems you have use curl on this site, a very strange action to not return HTML.
-
 \x1b[36m\n\x1b[36m                                 #\n\x1b[36m####  ##   ## #  ## #  ##     ## #  ##  #   #\n\x1b[36m   # #  # #  ## #  ## #  #   #  ## #  # #   #\n\x1b[36m  #  #### #   # #   # ####   #   # ####  # #\n\x1b[36m #   #    #   # #   # #      #   # #     # #\n\x1b[36m#    #  # #  ## #  ## #  #   #  ## #  #   #\n\x1b[36m####  ##   ## #  ## #  ##  #  ## #  ##    #\n\x1b[36m              #     #\n\x1b[36m              #     #\n\x1b[0m\n
-
 LINKS:
 GitHub — https://github.com/Zeqqqe
 Discord — @zeqqqe
-Email — contact@zeqqe.dev 
+Email — mailto:contact@zeqqe.dev 
 —————————————————————————
 INFO:
 I am a Linux live environment user, and I have accumulated over 13 Gigabytes of Linux lice ISOs.`;
