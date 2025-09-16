@@ -179,7 +179,7 @@ const htmlContent = `<!DOCTYPE html>
         <li>Email: <a href="mailto:contact@zeqqe.dev">contact@zeqqe.dev</a></li>
         <li>GitHub: <a href="https://github.com/zeqqqe" target="_blank">zeqqqe</a></li>
         <li>Alternate GitHub: <a href="https://github.com/Zalgoo" target="_blank">Zalgoo</a></li>
-        <li>Bluesky: <a href="https://bsky.app/profile/zeqqe.dev" target="_blank">zeqqe</a></li>
+        <li>Bluesky: <a href="https://bsky.app/profile/zeqqe.dev" target="_blank">zeqqe.dev</a></li>
         <li>Ko-fi: <a href="https://ko-fi.com/zeqqqe" target="_blank">zeqqe</a></li>
       </ul>
     </section>
@@ -457,6 +457,7 @@ const copyleftContent = `<!DOCTYPE html>
   </script>
 </body>
 </html>`;
+
 const fundingContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -662,24 +663,6 @@ const fundingContent = `<!DOCTYPE html>
 </body>
 </html>`;
 
-const b64ScrambledData = "eX16R2wlLjR44bFdQS9j8ZDCuCIyUABWZUBvW3BOLcK6cDBDcDvCs28/a3M5KWrCnYppKSlk8JjCv3stK2HDgl+bbS++8Z/Cv2Ri8YDCr3h8YKDCr0rCv30xWO+gw6lm4oDCnzo47pXCt8KSw61K3KDCscOB2d1MbsKw7rJod8Ktw7TCoMOmw7jCtcK0w5LCpsKt4oDCr++gw5LClsKgw6jCtsK4w6/ChcK1w4LCpcO+woXCpsOUwpHCtsK3w5rCt8OawqXDs8O1w7DCt8KnwpLCtcO5wrHCpMOVwqLCrsK5w5rCtMOtw7nCoMOswoXCpsK6w7nCmsOfwqTCpsKiwoXCvMK7woDCvcKqwrPCqcKWw6bDscKgwrLCtsO+w7jCtMKxw6rDtMOjwoDCu8KkwrPCvcKgwr7CtsKhw5LCpMO5wrbDssKkwrnCtsK/wrbDssKs7SsKkw4vCoMOhwrHCosKyw6jCu8O0w7TDssKgwrXCvsKqwrnCtsKnwoDCpsOKwr3ClcO1w5jDmsKtwr/CrcK6wr7Cs8O4woLCs8O1wr/Dh8O7wrHCtsO0w6DDusO4wrTCvMK6w5zDo8K0woLCqcKcwrPCpcKowqvCm8OHwoDCqMK8woHCnsOyw6LCgMKgwqrDrcK7wqPDuMOtwrDCgcOBw6HCtsOvw4LCtMK0wqLCt8KrwoDCuMKxw6XCvMOEwpLDu8OUwqXDtMKsw4LDmsK2wqLDjMKtwrDCtsO0w6DDuMKgw7HCtMOkwqvCtsKjw5rCscK1woXCvMO0wpXCtsO1w7LCu8O6wqjCsMOuwq3DvMKiw4DDssK4wqjCpcO5wqvDrsKowrHDrcOwwoLCvMKwwqjCrsK2wqjCsMK0wp3DqcKpwrjDqsKswqPCtMKzwrLCpsOcwrLDrcO7wrXCqcOvwq3CqMKow4XDrsOzw6XDgMKAwqvCsMOywrDCtMOswqvCvcK2w77DuMOzwqfCssOtw7zDuMO0wrvDtMKzwrjCtMO6wrfCscKywrLCpMO3wqfCrsO1wpnCrcKwwpDCosK3wrnCtsO8wp3DqcKDwoLCtMOow67DhcOuw6rDg8OrwrHCvMKywq3DjcOzw4rDtMKswozCt8O1w7rDh8O0woXCrsO4wqTCssKgwrPCpMK2wozDhMK2wofDtsKww6nDvMO3w4zDhMOjwqLCtMKjwrLCrcKWw7HCucKhw7TCtsOAwr7CtsKswqHCsMKqw7HDvMKvw4jCrcO6wrHCqMOywrLCrsO9woPCqMKswpLCssOHwo3DrcKswo3CtMO0wofDssKywrHCrMKrwqfCtsK+wrPCrcOawqvCuMK3w7DDo8OBwpTCu8Ouw5rCtMOCwrXCqcK0w7zDmsKswrDCqcKxwrLCscKuw6PCpMKiwpjCqcOCwqLCt8K2wqLCscKkwoDCtsOwwrLCtsKwwoTDscO6w63CvMKrwr3CpMK8w7rDvMK5wpPCq8O+w7TDuMO1w5/DncK9wqvCjMKVwrLDtMK+w6rCtMK9w7TChsOFw4DCrcOUwqDDrsO1wrPCvMKwwoLCqMOgwrfCscKkwrLCvcKoMiw=";
-
-function generateUselessData() {
-  const dataLength = 500;
-  // Decode the Base64 string to get the raw data
-  const decodedData = atob(b64ScrambledData);
-  const scrambledLength = decodedData.length;
-  
-  const start1 = Math.floor(Math.random() * (scrambledLength - dataLength));
-  const snippet1 = decodedData.substring(start1, start1 + dataLength);
-  
-  const start2 = Math.floor(Math.random() * (scrambledLength - 100));
-  const snippet2 = decodedData.substring(start2, start2 + 100);
-  
-  // Return the combined, "smushed" data
-  return `${snippet1}${snippet2}`;
-}
-
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
 });
@@ -727,13 +710,6 @@ async function handleRequest(request) {
       return new Response(textContent, {
         headers: {
           "Content-Type": "text/plain",
-        },
-      });
-    } else if (userAgent.includes("Wget")) {
-      const uselessData = generateUselessData();
-      return new Response(uselessData, {
-        headers: {
-          "Content-Type": "text/html",
         },
       });
     } else {
