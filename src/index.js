@@ -179,7 +179,7 @@ const htmlContent = `<!DOCTYPE html>
         <li>Email: <a href="mailto:contact@zeqqe.dev">contact@zeqqe.dev</a></li>
         <li>GitHub: <a href="https://github.com/zeqqqe" target="_blank">zeqqqe</a></li>
         <li>Alternate GitHub: <a href="https://github.com/Zalgoo" target="_blank">Zalgoo</a></li>
-        <li>Bluesky: <a href="https://bsky.app/profile/zeqqe.dev" target="_blank">zeqqe.dev</a></li>
+        <li>Bluesky: <a href="https://bsky.app/profile/zeqqe.dev" target="_blank">zeqqe</a></li>
         <li>Ko-fi: <a href="https://ko-fi.com/zeqqqe" target="_blank">zeqqe</a></li>
       </ul>
     </section>
