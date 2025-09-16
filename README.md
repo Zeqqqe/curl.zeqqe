@@ -8,7 +8,6 @@ curl zeqqe.dev
 
 
 ##### Site Links:
-- [GitHub.io](https://zeqqqe.github.io/zeqqe.github.io/)
 - [zeqqe.dev](https://zeqqe.dev)
 
 
