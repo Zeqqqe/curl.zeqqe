@@ -663,11 +663,10 @@ const fundingContent = `<!DOCTYPE html>
 </body>
 </html>`;
 
-const textContent = `Hello, it seems you have use curl on this site, a very strange action to not return HTML.
-\x1b[36m
+const textContent = `
                                  #
-####  ##   ## #  ## #  ##     ## #  ##  #   #
-   # #  # #  ## #  ## #  #   #  ## #  # #   #
+####  ##   ## #  ## #  ##     ## #  ##  #   # \x1b[0m It seems you have use curl on this site, a very strange action to not return HTML.
+\x1b[36m   # #  # #  ## #  ## #  #   #  ## #  # #   #
   #  #### #   # #   # ####   #   # ####  # #
  #   #    #   # #   # #      #   # #     # #
 #    #  # #  ## #  ## #  #   #  ## #  #   #
