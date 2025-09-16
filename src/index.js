@@ -180,7 +180,7 @@ const htmlContent = `<!DOCTYPE html>
         <li>GitHub: <a href="https://github.com/zeqqqe" target="_blank">zeqqqe</a></li>
         <li>Alternate GitHub: <a href="https://github.com/Zalgoo" target="_blank">Zalgoo</a></li>
         <li>Bluesky: <a href="https://bsky.app/profile/zeqqe.dev" target="_blank">zeqqe.dev</a></li>
-        <li>Ko-fi: <a href="https://ko-fi.com/zeqqqe" target="_blank">zeqqqe</a></li>
+        <li>Ko-fi: <a href="https://ko-fi.com/zeqqqe" target="_blank">zeqqe</a></li>
       </ul>
     </section>
   </main>
@@ -684,27 +684,22 @@ async function handleRequest(request) {
       const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
       const textContent = `
-\x1b[36m                                
-                               #
-                               #
- ###   ##   ##   ##   ##     ##    ## #  #
-   #  # #  # #  # #  # #    # #   # # #  #
-  #  ###  #  # #  # ###    #  #  ###  # #
- #   #    # #  # #  #      # #   #     #
-###   ##   ##   ##   ##  #  ##    ##   #
-           #    #
-           #    #
+\x1b[36m
+                                #
+ ###   ##   ##   ##   ##     ##    ## #  #   \x1b[0m\x1b[36mStatus:\x1b[0m
+   #  # #  # #  # #  # #    # #   # # #  #   Generated: ${formattedDateTime}
+  #  ###  #  # #  # ###    #  #  ###  # #    
+ #   #    # #  # #  #      # #   #     #     
+###   ##   ##   ##   ##  #  ##    ##   #     
+           #    #                             
+           #    #                             
 \x1b[0m It seems you have use curl on this site, a very strange action to not return HTML.
 \x1b[36m
-\x1b[36m┌─Contact─────────────────────────────────┐\x1b[0m\x1b[36m┌─Info─────────────────────────────────┐\x1b[0m
-\x1b[36m│\x1b[0m GitHub — https://github.com/Zeqqqe      \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m I am a Linux live environment user,  \x1b[0m
-\x1b[36m│\x1b[0m Discord — @zeqqqe                       \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m and I have accumulated over 13       \x1b[0m
-\x1b[36m│\x1b[0m Email — mailto:contact@zeqqe.dev        \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m Gigabytes of Linux live ISOs.        \x1b[0m
-\x1b[36m└─────────────────────────────────────────┘\x1b[0m\x1b[36m└──────────────────────────────────────┘\x1b[0m
-\x1b[36m
-┌─Status────────────────────────────────┐
-\x1b[36m│\x1b[0m  Generated: ${formattedDateTime} \x1b[36m │
-└───────────────────────────────────────┘
+\x1b[36m┌─Contact─────────────────────────────────┐\x1b[0m\x1b[36m┌─Info──────────────────────────────────┐\x1b[0m
+\x1b[36m│\x1b[0m GitHub — https://github.com/Zeqqqe      \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m I am a Linux live environment user,   \x1b[36m│\x1b[0m
+\x1b[36m│\x1b[0m Discord — @zeqqqe                       \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m and I have accumulated over 13        \x1b[36m│\x1b[0m
+\x1b[36m│\x1b[0m Email — mailto:contact@zeqqe.dev        \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m Gigabytes of Linux live ISOs.         \x1b[36m│\x1b[0m
+\x1b[36m└─────────────────────────────────────────┘\x1b[0m\x1b[36m└───────────────────────────────────────┘\x1b[0m
 \x1b[48;5;2m    \x1b[48;5;4m    \x1b[48;5;6m    \x1b[48;5;7m    \x1b[0m\n\x1b[48;5;10m    \x1b[48;5;12m    \x1b[48;5;14m    \x1b[48;5;250m    \x1b[0m
 `;
 
