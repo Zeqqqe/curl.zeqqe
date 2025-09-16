@@ -662,8 +662,29 @@ const fundingContent = `<!DOCTYPE html>
   </script>
 </body>
 </html>`;
+addEventListener("fetch", (event) => {
+  event.respondWith(handleRequest(event.request));
+});
 
-const textContent = `\x1b[36m                                
+async function handleRequest(request) {
+  const userAgent = request.headers.get("user-agent") || "";
+  const url = new URL(request.url);
+
+  if (url.pathname === "/") {
+    if (userAgent.includes("curl")) {
+      const currentTime = new Date();
+      const formattedDateTime = currentTime.toLocaleString("en-US", {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        timeZoneName: 'short',
+      });
+      const textContent = `
+\x1b[36m                                
                                #
                                #
  ###   ##   ##   ##   ##     ##    ## #  #
@@ -676,23 +697,17 @@ const textContent = `\x1b[36m
 \x1b[0m It seems you have use curl on this site, a very strange action to not return HTML.
 \x1b[36m
 \x1b[36m┌─Contact─────────────────────────────────┐\x1b[0m\x1b[36m┌─Info─────────────────────────────────┐\x1b[0m
-\x1b[36m│\x1b[0m GitHub — https://github.com/Zeqqqe      \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m I am a Linux live environment user,  \x1b[36m│\x1b[0m
-\x1b[36m│\x1b[0m Discord — @zeqqqe                       \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m and I have accumulated over 13       \x1b[36m│\x1b[0m
-\x1b[36m│\x1b[0m Email — mailto:contact@zeqqe.dev        \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m Gigabytes of Linux live ISOs.        \x1b[36m│\x1b[0m
+\x1b[36m│\x1b[0m GitHub — https://github.com/Zeqqqe      \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m I am a Linux live environment user,  \x1b[0m
+\x1b[36m│\x1b[0m Discord — @zeqqqe                       \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m and I have accumulated over 13       \x1b[0m
+\x1b[36m│\x1b[0m Email — mailto:contact@zeqqe.dev        \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m Gigabytes of Linux live ISOs.        \x1b[0m
 \x1b[36m└─────────────────────────────────────────┘\x1b[0m\x1b[36m└──────────────────────────────────────┘\x1b[0m
+\x1b[36m
+┌─Status────────────────────────────────┐
+\x1b[36m│\x1b[0m  Accessed at: ${formattedDateTime}\x1b[36m │
+└───────────────────────────────────────┘
 \x1b[48;5;2m    \x1b[48;5;4m    \x1b[48;5;6m    \x1b[48;5;7m    \x1b[0m\n\x1b[48;5;10m    \x1b[48;5;12m    \x1b[48;5;14m    \x1b[48;5;250m    \x1b[0m
 `;
 
-addEventListener("fetch", (event) => {
-  event.respondWith(handleRequest(event.request));
-});
-
-async function handleRequest(request) {
-  const userAgent = request.headers.get("user-agent") || "";
-  const url = new URL(request.url);
-  
-  if (url.pathname === "/") {
-    if (userAgent.includes("curl")) {
       return new Response(textContent, {
         headers: {
           "Content-Type": "text/plain",
