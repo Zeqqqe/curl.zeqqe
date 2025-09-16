@@ -663,8 +663,7 @@ const fundingContent = `<!DOCTYPE html>
 </body>
 </html>`;
 
-const textContent = `
-\x1b[36m                                
+const textContent = `\x1b[36m                                
                                #
                                #
  ###   ##   ##   ##   ##     ##    ## #  #
@@ -681,7 +680,7 @@ const textContent = `
 \x1b[36m│\x1b[0m Discord — @zeqqqe                       \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m and I have accumulated over 13       \x1b[36m│\x1b[0m
 \x1b[36m│\x1b[0m Email — mailto:contact@zeqqe.dev        \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m Gigabytes of Linux live ISOs.        \x1b[36m│\x1b[0m
 \x1b[36m└─────────────────────────────────────────┘\x1b[0m\x1b[36m└──────────────────────────────────────┘\x1b[0m
-\x1b[48;5;2m    \x1b[48;5;4m    \x1b[48;5;6m    \x1b[48;5;0m    \x1b[0m\n\x1b[48;5;10m    \x1b[48;5;12m    \x1b[48;5;14m    \x1b[48;5;232m    \x1b[0m
+\x1b[48;5;2m    \x1b[48;5;4m    \x1b[48;5;6m    \x1b[48;5;0m    \x1b[0m\n\x1b[48;5;10m    \x1b[48;5;12m    \x1b[48;5;14m    \x1b[0m
 
 `;
 
