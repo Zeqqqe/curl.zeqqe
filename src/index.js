@@ -389,10 +389,10 @@ const copyleftContent = `<!DOCTYPE html>
       <h1>zeqqe.dev</h1>
       <nav>
         <ul>
-          <li><a href="index.html#about">ABOUT</a></li>
-          <li><a href="index.html#projects">PROJECTS</a></li>
-          <li><a href="index.html#contact">CONTACT</a></li>
-          <li><a href="index.html">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="">HOME</a></li>
         </ul>
       </nav>
     </div>
@@ -429,7 +429,7 @@ const copyleftContent = `<!DOCTYPE html>
 
   <footer>
     <small>
-      <a href="index.html">🄯 2025 zeqqe — Return to main site</a>
+      <a href="">🄯 2025 zeqqe — Return to main site</a>
     </small>
   </footer>
 
