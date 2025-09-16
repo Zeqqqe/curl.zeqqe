@@ -663,6 +663,15 @@ const fundingContent = `<!DOCTYPE html>
 </body>
 </html>`;
 
+function generateUselessData(length) {
+  const randomBytes = new Uint8Array(length);
+  crypto.getRandomValues(randomBytes);
+  const base64String = btoa(String.fromCharCode.apply(null, randomBytes));
+  const hexJunk = Array.from(randomBytes).map(b => b.toString(16).padStart(2, '0')).join('');
+  const binJunk = Array.from(randomBytes).map(b => b.toString(2).padStart(8, '0')).join('');
+  return `\n\n${hexJunk}\n\n${binJunk}\n\n`;
+}
+
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
 });
@@ -712,6 +721,13 @@ async function handleRequest(request) {
           "Content-Type": "text/plain",
         },
       });
+    } else if (userAgent.includes("Wget")) {
+      const uselessData = generateUselessData(50);
+      return new Response(uselessData, {
+        headers: {
+          "Content-Type": "text/html",
+        },
+      });
     } else {
       return new Response(htmlContent, {
         headers: {
@@ -733,5 +749,5 @@ async function handleRequest(request) {
     });
   }
 
-  return new Response("Not Found", { status: 404 });
+  return new Response("404 Not Found, this is not a valid page :/", { status: 404 });
 }
