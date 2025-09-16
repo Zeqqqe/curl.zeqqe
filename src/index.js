@@ -670,6 +670,46 @@ addEventListener("fetch", (event) => {
 async function handleRequest(request) {
   const userAgent = request.headers.get("user-agent") || "";
   const url = new URL(request.url);
+    if (url.pathname === '/robots.txt') {
+    const robotsTxt = `
+User-agent: *
+Allow: /
+Disallow: /copyleft.html
+Disallow: /funding.html
+Sitemap: ${url.origin}/sitemap.xml
+`;
+    return new Response(robotsTxt, {
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+    });
+  } else if (url.pathname === '/sitemap.xml') {
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://zeqqe.dev/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://zeqqe.dev/copyleft.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://zeqqe.dev/funding.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>`;
+
+    return new Response(sitemap, {
+      headers: {
+        'Content-Type': 'application/xml',
+      },
+    });
+  }
+
 
   if (url.pathname === "/") {
     if (userAgent.includes("curl")) {
