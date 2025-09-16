@@ -664,7 +664,7 @@ const fundingContent = `<!DOCTYPE html>
 </html>`;
 
 const textContent = `
-\x1b[36m                         #       
+\x1b[36m                                
                                #
                                #
  ###   ##   ##   ##   ##     ##    ## #  #
