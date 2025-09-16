@@ -662,6 +662,7 @@ const fundingContent = `<!DOCTYPE html>
   </script>
 </body>
 </html>`;
+
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
 });
@@ -673,16 +674,15 @@ async function handleRequest(request) {
   if (url.pathname === "/") {
     if (userAgent.includes("curl")) {
       const currentTime = new Date();
-      const formattedDateTime = currentTime.toLocaleString("en-US", {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        timeZoneName: 'short',
-      });
+      const year = currentTime.getFullYear();
+      const month = String(currentTime.getMonth() + 1).padStart(2, '0');
+      const day = String(currentTime.getDate()).padStart(2, '0');
+      const hours = String(currentTime.getHours()).padStart(2, '0');
+      const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+      const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+      
+      const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
       const textContent = `
 \x1b[36m                                
                                #
@@ -703,7 +703,7 @@ async function handleRequest(request) {
 \x1b[36m└─────────────────────────────────────────┘\x1b[0m\x1b[36m└──────────────────────────────────────┘\x1b[0m
 \x1b[36m
 ┌─Status────────────────────────────────┐
-\x1b[36m│\x1b[0m  Accessed at: ${formattedDateTime}\x1b[36m │
+\x1b[36m│\x1b[0m  Generated: ${formattedDateTime} \x1b[36m │
 └───────────────────────────────────────┘
 \x1b[48;5;2m    \x1b[48;5;4m    \x1b[48;5;6m    \x1b[48;5;7m    \x1b[0m\n\x1b[48;5;10m    \x1b[48;5;12m    \x1b[48;5;14m    \x1b[48;5;250m    \x1b[0m
 `;
