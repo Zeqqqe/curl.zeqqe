@@ -678,7 +678,7 @@ const textContent = `Welcome to zeqqe.dev, it seems you have use curl on this si
 \x1b[0m
 
 \x1b[36m┌─CONTACT─────────────────────────────────┐\x1b[0m\x1b[36m┌─INFO─────────────────────────────────┐\x1b[0m
-\x1b[36m│\x1b[0m GitHub — https://github.com/Zeqqqe      \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m I am a Linux live environment user,    \x1b[36m│\x1b[0m
+\x1b[36m│\x1b[0m GitHub — https://github.com/Zeqqqe      \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m I am a Linux live environment user,  \x1b[36m│\x1b[0m
 \x1b[36m│\x1b[0m Discord — @zeqqqe                       \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m and I have accumulated over 13       \x1b[36m│\x1b[0m
 \x1b[36m│\x1b[0m Email — mailto:contact@zeqqe.dev        \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m Gigabytes of Linux live ISOs.        \x1b[36m│\x1b[0m
 \x1b[36m└─────────────────────────────────────────┘\x1b[0m\x1b[36m└──────────────────────────────────────┘\x1b[0m
