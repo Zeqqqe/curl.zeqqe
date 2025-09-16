@@ -684,10 +684,10 @@ async function handleRequest(request) {
       const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
       const textContent = `
-\x1b[36m
-                                #
+\x1b[36m                       #
+                               #
  ###   ##   ##   ##   ##     ##    ## #  #   \x1b[0m\x1b[36mStatus:\x1b[0m
-   #  # #  # #  # #  # #    # #   # # #  #   \x1b[0m Generated: ${formattedDateTime}
+\x1b[36m   #  # #  # #  # #  # #    # #   # # #  #   \x1b[0m Generated: ${formattedDateTime}
 \x1b[36m  #  ###  #  # #  # ###    #  #  ###  # #    
  #   #    # #  # #  #      # #   #     #     
 ###   ##   ##   ##   ##  #  ##    ##   #     
