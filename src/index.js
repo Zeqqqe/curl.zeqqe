@@ -676,12 +676,12 @@ const textContent = `Welcome to zeqqe.dev, it seems you have use curl on this si
               #     #
               #     #
 \x1b[0m
+┌─CONTACT─────────────────────┐┌─INFO──────────────────────────────┐
+│ GitHub — https://github.com/Zeqqqe    ││ I am a Linux live environment user, │
+│ Discord — @zeqqqe                     ││ and I have accumulated over 13      │
+│ Email — mailto:contact@zeqqe.dev      ││ Gigabytes of Linux live ISOs.       │
+└─────────────────────────────────────┘└───────────────────────────────┘
 
-\x1b[36m┌─CONTACT─────────────────────┐\x1b[0m\x1b[36m┌─INFO──────────────────────────────┐\x1b[0m
-\x1b[36m│\x1b[0mGitHub — https://github.com/Zeqqqe   \x1b[36m│\x1b[0m\x1b[36m│\x1b[0mI am a Linux live environment user,\x1b[36m│\x1b[0m
-\x1b[36m│\x1b[0mDiscord — @zeqqqe                    \x1b[36m│\x1b[0m\x1b[36m│\x1b[0mand I have accumulated over 13     \x1b[36m│\x1b[0m
-\x1b[36m│\x1b[0mEmail — mailto:contact@zeqqe.dev     \x1b[36m│\x1b[0m\x1b[36m│\x1b[0mGigabytes of Linux live ISOs.      \x1b[36m│\x1b[0m
-\x1b[36m└─────────────────────────────────────┘\x1b[0m\x1b[36m└───────────────────────────────┘\x1b[0m
 `;
 
 addEventListener("fetch", (event) => {
