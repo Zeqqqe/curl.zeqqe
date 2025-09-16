@@ -666,27 +666,22 @@ const fundingContent = `<!DOCTYPE html>
 const textContent = `Welcome to zeqqe.dev, it seems you have use curl on this site, a very strange action to not return HTML.
 
 \x1b[36m
-\x1b[36m                                 #
-\x1b[36m####  ##   ## #  ## #  ##     ## #  ##  #   #
-\x1b[36m   # #  # #  ## #  ## #  #   #  ## #  # #   #
-\x1b[36m  #  #### #   # #   # ####   #   # ####  # #
-\x1b[36m #   #    #   # #   # #      #   # #     # #
-\x1b[36m#    #  # #  ## #  ## #  #   #  ## #  #   #
-\x1b[36m####  ##   ## #  ## #  ##  #  ## #  ##    #
-\x1b[36m              #     #
-\x1b[36m              #     #
+                                 #
+####  ##   ## #  ## #  ##     ## #  ##  #   #
+   # #  # #  ## #  ## #  #   #  ## #  # #   #
+  #  #### #   # #   # ####   #   # ####  # #
+ #   #    #   # #   # #      #   # #     # #
+#    #  # #  ## #  ## #  #   #  ## #  #   #
+####  ##   ## #  ## #  ##  #  ## #  ##    #
+              #     #
+              #     #
 \x1b[0m
 
-┌─LINKS───────────────────────────────┐
-│GitHub — https://github.com/Zeqqqe   │
-│Discord — @zeqqqe                    │
-│Email — mailto:contact@zeqqe.dev     │
-└─────────────────────────────────────┘
-┌─INFO────────────────────────────────┐
-│I am a Linux live environment user,  │
-│and I have accumulated over 13       │
-│Gigabytes of Linux live ISOs.        │
-└─────────────────────────────────────┘
+\x1b[36m┌─CONTACT─────────────────────┐\x1b[0m\x1b[36m┌─INFO──────────────────────────────┐\x1b[0m
+\x1b[36m│\x1b[0mGitHub — https://github.com/Zeqqqe   \x1b[36m│\x1b[0m\x1b[36m│\x1b[0mI am a Linux live environment user,\x1b[36m│\x1b[0m
+\x1b[36m│\x1b[0mDiscord — @zeqqqe                    \x1b[36m│\x1b[0m\x1b[36m│\x1b[0mand I have accumulated over 13     \x1b[36m│\x1b[0m
+\x1b[36m│\x1b[0mEmail — mailto:contact@zeqqe.dev     \x1b[36m│\x1b[0m\x1b[36m│\x1b[0mGigabytes of Linux live ISOs.      \x1b[36m│\x1b[0m
+\x1b[36m└─────────────────────────────────────┘\x1b[0m\x1b[36m└───────────────────────────────┘\x1b[0m
 `;
 
 addEventListener("fetch", (event) => {
