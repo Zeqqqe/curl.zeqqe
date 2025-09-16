@@ -733,5 +733,5 @@ async function handleRequest(request) {
     });
   }
 
-  return new Response("Not Found", { status: 404 });
+  return new Response("404, Not Found. The page you requested is invalid :/", { status: 404 });
 }
