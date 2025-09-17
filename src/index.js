@@ -742,13 +742,13 @@ Sitemap: ${url.origin}/sitemap.xml
         const contentWidth = longestName + longestLink + 3; // +3 for " — "
         const totalWidth = contentWidth + 2; // +2 for the "|" borders
 
-        const horizontalLine = `\x1b[36m┌${"─".repeat(totalWidth - 0)}┐\x1b[0m`;
+        const horizontalLine = `\x1b[36m┌${"─".repeat(totalWidth - 0)}┐\x1b[0m`; 
         const bottomLine = `\x1b[36m└${"─".repeat(totalWidth - 0)}┘\x1b[0m`;
 
         let asciiArt = `
 \x1b[1m\x1b[37m        \x1b[90m#####           \x1b[38;2;64;224;208m                                       o              \x1b[0m
        \x1b[90m#######          \x1b[38;2;76;227;213m                                      O               \x1b[0m
-       \x1b[90m##\x1b[37mO\x1b[90m#\x1b[37mO\x1b[90m##          \x1b[38;2;89;230;218m                                      o               \x1b[0m
+       \x1b[90m##\x1b[37mO\x1b[90m#\x1b[37mO\x1b[90m##          \x1b[38;2;89;230;218m                                      o    /linktree           \x1b[0m
        \x1b[90m#\x1b[33m#####\x1b[90m#          \x1b[38;2;102;234;223m                                      o               \x1b[0m
      \x1b[90m##\x1b[37m##\x1b[33m###\x1b[37m##\x1b[90m##        \x1b[38;2;115;237;228mooOO .oOo. .oOoO' .oOoO' .oOo.    .oOoO  .oOo. 'o   O \x1b[0m
     \x1b[90m#\x1b[37m##########\x1b[90m##       \x1b[38;2;128;241;234m  o  OooO' O   o  O   o  OooO'    o   O  OooO'  O   o      \x1b[0m
@@ -758,9 +758,7 @@ Sitemap: ${url.origin}/sitemap.xml
 \x1b[33m######\x1b[90m#\x1b[37m#######\x1b[90m#\x1b[33m######   \x1b[38;2;180;255;255m               'o     'o                              \x1b[0m
 \x1b[33m#######\x1b[90m#\x1b[37m#####\x1b[90m#\x1b[33m#######   
   \x1b[33m#####\x1b[90m#######\x1b[33m#####\x1b[0m     \x1b[0m
-     
-\x1b[0m                                                                     Time: ${formattedDateTime}
-
+     \x1b[0m                                                                     Time: ${formattedDateTime}
 ${horizontalLine}
 `;
 
@@ -792,8 +790,7 @@ ${horizontalLine}
 \x1b[33m######\x1b[90m#\x1b[37m#######\x1b[90m#\x1b[33m######   \x1b[38;2;180;255;255m               'o     'o                              \x1b[0m
 \x1b[33m#######\x1b[90m#\x1b[37m#####\x1b[90m#\x1b[33m#######   
   \x1b[33m#####\x1b[90m#######\x1b[33m#####\x1b[0m     \x1b[0m
-     
-\x1b[0m                                                                     Time: ${formattedDateTime}
+     \x1b[0m                                                                     Time: ${formattedDateTime}
 
 \x1b[0m It seems you have use curl on this site, a very strange action to not return HTML.
 \x1b[36m
@@ -802,7 +799,7 @@ ${horizontalLine}
 \x1b[36m│\x1b[0m Discord — @zeqqqe                       \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m and I have accumulated over 13        \x1b[36m│\x1b[0m
 \x1b[36m│\x1b[0m Email — mailto:contact@zeqqe.dev        \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m Gigabytes of Linux live ISOs.         \x1b[36m│\x1b[0m
 \x1b[36m└─────────────────────────────────────────┘\x1b[0m\x1b[36m└───────────────────────────────────────┘\x1b[0m
-\x1b[0m  % Curl-able Links:
+\x1b[0m$ Curl-able Links:
 curl zeqqe.dev/linktree
    — \x1b[3mReturns URLs to all my profiles.\x1b[23m
 `;
