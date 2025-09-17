@@ -729,7 +729,7 @@ Sitemap: ${url.origin}/sitemap.xml
        [90m##[37mO[90m#[37mO[90m##          [38;2;89;230;218m                                      o               [0m
        [90m#[33m#####[90m#          [38;2;102;234;223m                                      o               [0m
      [90m##[37m##[33m###[37m##[90m##        [38;2;115;237;228mooOO .oOo. .oOoO' .oOoO' .oOo.    .oOoO  .oOo. 'o   O [0m
-    [90m#[37m##########[90m##       [38;2;128;241;234m  o  OooO' O   o  O   o  OooO'    o   O  OooO'  O   o      ${formattedDateTime}[0m
+    [90m#[37m##########[90m##       [38;2;128;241;234m  o  OooO' O   o  O   o  OooO'    o   O  OooO'  O   o      [0m
    [90m#[37m############[90m##      [38;2;141;244;239m O   O     o   O  o   O  O     oO O   o  O      o  O  [0m
    [90m#[37m############[90m###     [38;2;154;248;244mOooO 'OoO' 'OoOo  'OoOo  'OoO' Oo 'OoO'o 'OoO'  'o'   [0m
   [33m##[90m#[37m###########[90m##[33m#     [38;2;167;251;249m               O      O                               [0m
@@ -737,7 +737,7 @@ Sitemap: ${url.origin}/sitemap.xml
 [33m#######[90m#[37m#####[90m#[33m#######   
   [33m#####[90m#######[33m#####[0m     [0m
      
-[0m
+[0m                                                                     Time: ${formattedDateTime}
 \x1b[0m It seems you have use curl on this site, a very strange action to not return HTML.
 \x1b[36m
 \x1b[36m┌─Contact─────────────────────────────────┐\x1b[0m\x1b[36m┌─Info──────────────────────────────────┐\x1b[0m
