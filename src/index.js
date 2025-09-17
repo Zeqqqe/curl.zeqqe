@@ -738,6 +738,7 @@ Sitemap: ${url.origin}/sitemap.xml
   [33m#####[90m#######[33m#####[0m     [0m
      
 [0m                                                                     Time: ${formattedDateTime}
+
 \x1b[0m It seems you have use curl on this site, a very strange action to not return HTML.
 \x1b[36m
 \x1b[36m┌─Contact─────────────────────────────────┐\x1b[0m\x1b[36m┌─Info──────────────────────────────────┐\x1b[0m
@@ -745,7 +746,7 @@ Sitemap: ${url.origin}/sitemap.xml
 \x1b[36m│\x1b[0m Discord — @zeqqqe                       \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m and I have accumulated over 13        \x1b[36m│\x1b[0m
 \x1b[36m│\x1b[0m Email — mailto:contact@zeqqe.dev        \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m Gigabytes of Linux live ISOs.         \x1b[36m│\x1b[0m
 \x1b[36m└─────────────────────────────────────────┘\x1b[0m\x1b[36m└───────────────────────────────────────┘\x1b[0m
-\x1b[0m 
+\x1b[0m \x1B[8m My BitLocker Recovery key is: 579803-112480-608321-455987-234091-789012\x1B[0m
 `;
 
       return new Response(textContent, {
