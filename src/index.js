@@ -733,6 +733,18 @@ Sitemap: ${url.origin}/sitemap.xml
 
     // New /linktree endpoint
     if (url.pathname === "/linktree") {
+        const longestName = Object.keys(linktreeLinks).reduce(
+            (max, name) => Math.max(max, name.length), 0);
+        
+        const longestLink = Object.values(linktreeLinks).reduce(
+            (max, link) => Math.max(max, link.length), 0);
+        
+        const contentWidth = longestName + longestLink + 3; // +3 for " — "
+        const totalWidth = contentWidth + 2; // +2 for the "|" borders
+
+        const horizontalLine = `\x1b[36m┌${"─".repeat(totalWidth - 2)}┐\x1b[0m`;
+        const bottomLine = `\x1b[36m└${"─".repeat(totalWidth - 2)}┘\x1b[0m`;
+
         let asciiArt = `
 \x1b[1m\x1b[37m        \x1b[90m#####           \x1b[38;2;64;224;208m                                       o              \x1b[0m
        \x1b[90m#######          \x1b[38;2;76;227;213m                                      O               \x1b[0m
@@ -749,17 +761,14 @@ Sitemap: ${url.origin}/sitemap.xml
      
 \x1b[0m                                                                     Time: ${formattedDateTime}
 
-\x1b[36m┌──────────────────────────────────────────────────────────────────────┐\x1b[0m
+${horizontalLine}
 `;
-        
-        const longestName = Object.keys(linktreeLinks).reduce(
-            (max, name) => Math.max(max, name.length), 0);
 
         for (const [name, link] of Object.entries(linktreeLinks)) {
-            asciiArt += `\x1b[36m│\x1b[0m ${name.padEnd(longestName)} — ${link.padEnd(50)} \x1b[36m│\x1b[0m\n`;
+            asciiArt += `\x1b[36m│\x1b[0m ${name.padEnd(longestName)} — ${link.padEnd(longestLink)} \x1b[36m│\x1b[0m\n`;
         }
 
-        asciiArt += `\x1b[36m└──────────────────────────────────────────────────────────────────────┘\x1b[0m`;
+        asciiArt += `${bottomLine}`;
 
         return new Response(asciiArt, {
             headers: {
