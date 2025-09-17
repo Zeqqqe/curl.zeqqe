@@ -742,8 +742,8 @@ Sitemap: ${url.origin}/sitemap.xml
         const contentWidth = longestName + longestLink + 3; // +3 for " — "
         const totalWidth = contentWidth + 2; // +2 for the "|" borders
 
-        const horizontalLine = `\x1b[36m┌${"─".repeat(totalWidth - 2)}┐\x1b[0m`;
-        const bottomLine = `\x1b[36m└${"─".repeat(totalWidth - 2)}┘\x1b[0m`;
+        const horizontalLine = `\x1b[36m┌${"─".repeat(totalWidth - 0)}┐\x1b[0m`;
+        const bottomLine = `\x1b[36m└${"─".repeat(totalWidth - 0)}┘\x1b[0m`;
 
         let asciiArt = `
 \x1b[1m\x1b[37m        \x1b[90m#####           \x1b[38;2;64;224;208m                                       o              \x1b[0m
