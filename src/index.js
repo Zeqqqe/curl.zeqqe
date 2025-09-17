@@ -665,9 +665,9 @@ const fundingContent = `<!DOCTYPE html>
 
 // The new link object
 const linktreeLinks = {
-    "GitHub: https://github.com/Zeqqqe",
-    "Discord: @zeqqqe / https://discord.com/users/1265057708587880458,
-    "Email: mailto:contact@zeqqe.dev,
+    "GitHub": "https://github.com/Zeqqqe",
+    "Discord": "@zeqqqe / https://discord.com/users/1265057708587880458",
+    "Email": "mailto:contact@zeqqe.dev",
     "Bluesky": "https://bsky.app/profile/zeqqe.dev",
     "Ko-fi": "https://ko-fi.com/zeqqqe",
 };
