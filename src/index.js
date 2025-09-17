@@ -663,28 +663,49 @@ const fundingContent = `<!DOCTYPE html>
 </body>
 </html>`;
 
+// The new link object
+const linktreeLinks = {
+    "GitHub: https://github.com/Zeqqqe",
+    "Discord: @zeqqqe / https://discord.com/users/1265057708587880458,
+    "Email: mailto:contact@zeqqe.dev,
+    "Bluesky": "https://bsky.app/profile/zeqqe.dev",
+    "Ko-fi": "https://ko-fi.com/zeqqqe",
+};
+
 addEventListener("fetch", (event) => {
-  event.respondWith(handleRequest(event.request));
+    event.respondWith(handleRequest(event.request));
 });
 
 async function handleRequest(request) {
-  const userAgent = request.headers.get("user-agent") || "";
-  const url = new URL(request.url);
+    const userAgent = request.headers.get("user-agent") || "";
+    const url = new URL(request.url);
+
+    const currentTime = new Date();
+    const year = currentTime.getFullYear();
+    const month = String(currentTime.getMonth() + 1).padStart(2, '0');
+    const day = String(currentTime.getDate()).padStart(2, '0');
+    const hours = String(currentTime.getHours()).padStart(2, '0');
+    const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+    const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+    
+    const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+
     if (url.pathname === '/robots.txt') {
-    const robotsTxt = `
+        const robotsTxt = `
 User-agent: *
 Allow: /
 Disallow: /copyleft.html
 Disallow: /funding.html
 Sitemap: ${url.origin}/sitemap.xml
 `;
-    return new Response(robotsTxt, {
-      headers: {
-        'Content-Type': 'text/plain',
-      },
-    });
-  } else if (url.pathname === '/sitemap.xml') {
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+        return new Response(robotsTxt, {
+            headers: {
+                'Content-Type': 'text/plain',
+            },
+        });
+    } else if (url.pathname === '/sitemap.xml') {
+        const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zeqqe.dev/</loc>
@@ -703,41 +724,67 @@ Sitemap: ${url.origin}/sitemap.xml
   </url>
 </urlset>`;
 
-    return new Response(sitemap, {
-      headers: {
-        'Content-Type': 'application/xml',
-      },
-    });
-  }
+        return new Response(sitemap, {
+            headers: {
+                'Content-Type': 'application/xml',
+            },
+        });
+    }
 
-
-  if (url.pathname === "/") {
-    if (userAgent.includes("curl")) {
-      const currentTime = new Date();
-      const year = currentTime.getFullYear();
-      const month = String(currentTime.getMonth() + 1).padStart(2, '0');
-      const day = String(currentTime.getDate()).padStart(2, '0');
-      const hours = String(currentTime.getHours()).padStart(2, '0');
-      const minutes = String(currentTime.getMinutes()).padStart(2, '0');
-      const seconds = String(currentTime.getSeconds()).padStart(2, '0');
-      
-      const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-
-      const textContent = `
-[1m[37m        [90m#####           [38;2;64;224;208m                                       o              [0m
-       [90m#######          [38;2;76;227;213m                                      O               [0m
-       [90m##[37mO[90m#[37mO[90m##          [38;2;89;230;218m                                      o               [0m
-       [90m#[33m#####[90m#          [38;2;102;234;223m                                      o               [0m
-     [90m##[37m##[33m###[37m##[90m##        [38;2;115;237;228mooOO .oOo. .oOoO' .oOoO' .oOo.    .oOoO  .oOo. 'o   O [0m
-    [90m#[37m##########[90m##       [38;2;128;241;234m  o  OooO' O   o  O   o  OooO'    o   O  OooO'  O   o      [0m
-   [90m#[37m############[90m##      [38;2;141;244;239m O   O     o   O  o   O  O     oO O   o  O      o  O  [0m
-   [90m#[37m############[90m###     [38;2;154;248;244mOooO 'OoO' 'OoOo  'OoOo  'OoO' Oo 'OoO'o 'OoO'  'o'   [0m
-  [33m##[90m#[37m###########[90m##[33m#     [38;2;167;251;249m               O      O                               [0m
-[33m######[90m#[37m#######[90m#[33m######   [38;2;180;255;255m               'o     'o                              [0m
-[33m#######[90m#[37m#####[90m#[33m#######   
-  [33m#####[90m#######[33m#####[0m     [0m
+    // New /linktree endpoint
+    if (url.pathname === "/linktree") {
+        let asciiArt = `
+\x1b[1m\x1b[37m        \x1b[90m#####           \x1b[38;2;64;224;208m                                       o              \x1b[0m
+       \x1b[90m#######          \x1b[38;2;76;227;213m                                      O               \x1b[0m
+       \x1b[90m##\x1b[37mO\x1b[90m#\x1b[37mO\x1b[90m##          \x1b[38;2;89;230;218m                                      o               \x1b[0m
+       \x1b[90m#\x1b[33m#####\x1b[90m#          \x1b[38;2;102;234;223m                                      o               \x1b[0m
+     \x1b[90m##\x1b[37m##\x1b[33m###\x1b[37m##\x1b[90m##        \x1b[38;2;115;237;228mooOO .oOo. .oOoO' .oOoO' .oOo.    .oOoO  .oOo. 'o   O \x1b[0m
+    \x1b[90m#\x1b[37m##########\x1b[90m##       \x1b[38;2;128;241;234m  o  OooO' O   o  O   o  OooO'    o   O  OooO'  O   o      \x1b[0m
+   \x1b[90m#\x1b[37m############\x1b[90m##      \x1b[38;2;141;244;239m O   O     o   O  o   O  O     oO O   o  O      o  O  \x1b[0m
+   \x1b[90m#\x1b[37m############\x1b[90m###     \x1b[38;2;154;248;244mOooO 'OoO' 'OoOo  'OoOo  'OoO' Oo 'OoO'o 'OoO'  'o'   \x1b[0m
+  \x1b[33m##\x1b[90m#\x1b[37m###########\x1b[90m##\x1b[33m#     \x1b[38;2;167;251;249m               O      O                               \x1b[0m
+\x1b[33m######\x1b[90m#\x1b[37m#######\x1b[90m#\x1b[33m######   \x1b[38;2;180;255;255m               'o     'o                              \x1b[0m
+\x1b[33m#######\x1b[90m#\x1b[37m#####\x1b[90m#\x1b[33m#######   
+  \x1b[33m#####\x1b[90m#######\x1b[33m#####\x1b[0m     \x1b[0m
      
-[0m                                                                     Time: ${formattedDateTime}
+\x1b[0m                                                                     Time: ${formattedDateTime}
+
+\x1b[36m┌──────────────────────────────────────────────────────────────────┐\x1b[0m
+`;
+        
+        const longestName = Object.keys(linktreeLinks).reduce(
+            (max, name) => Math.max(max, name.length), 0);
+
+        for (const [name, link] of Object.entries(linktreeLinks)) {
+            asciiArt += `\x1b[36m│\x1b[0m ${name.padEnd(longestName)} — ${link.padEnd(50)} \x1b[36m│\x1b[0m\n`;
+        }
+
+        asciiArt += `\x1b[36m└──────────────────────────────────────────────────────────────────┘\x1b[0m`;
+
+        return new Response(asciiArt, {
+            headers: {
+                "Content-Type": "text/plain",
+            },
+        });
+    }
+
+    if (url.pathname === "/") {
+        if (userAgent.includes("curl")) {
+            const textContent = `
+\x1b[1m\x1b[37m        \x1b[90m#####           \x1b[38;2;64;224;208m                                       o              \x1b[0m
+       \x1b[90m#######          \x1b[38;2;76;227;213m                                      O               \x1b[0m
+       \x1b[90m##\x1b[37mO\x1b[90m#\x1b[37mO\x1b[90m##          \x1b[38;2;89;230;218m                                      o               \x1b[0m
+       \x1b[90m#\x1b[33m#####\x1b[90m#          \x1b[38;2;102;234;223m                                      o               \x1b[0m
+     \x1b[90m##\x1b[37m##\x1b[33m###\x1b[37m##\x1b[90m##        \x1b[38;2;115;237;228mooOO .oOo. .oOoO' .oOoO' .oOo.    .oOoO  .oOo. 'o   O \x1b[0m
+    \x1b[90m#\x1b[37m##########\x1b[90m##       \x1b[38;2;128;241;234m  o  OooO' O   o  O   o  OooO'    o   O  OooO'  O   o      \x1b[0m
+   \x1b[90m#\x1b[37m############\x1b[90m##      \x1b[38;2;141;244;239m O   O     o   O  o   O  O     oO O   o  O      o  O  \x1b[0m
+   \x1b[90m#\x1b[37m############\x1b[90m###     \x1b[38;2;154;248;244mOooO 'OoO' 'OoOo  'OoOo  'OoO' Oo 'OoO'o 'OoO'  'o'   \x1b[0m
+  \x1b[33m##\x1b[90m#\x1b[37m###########\x1b[90m##\x1b[33m#     \x1b[38;2;167;251;249m               O      O                               \x1b[0m
+\x1b[33m######\x1b[90m#\x1b[37m#######\x1b[90m#\x1b[33m######   \x1b[38;2;180;255;255m               'o     'o                              \x1b[0m
+\x1b[33m#######\x1b[90m#\x1b[37m#####\x1b[90m#\x1b[33m#######   
+  \x1b[33m#####\x1b[90m#######\x1b[33m#####\x1b[0m     \x1b[0m
+     
+\x1b[0m                                                                     Time: ${formattedDateTime}
 
 \x1b[0m It seems you have use curl on this site, a very strange action to not return HTML.
 \x1b[36m
@@ -746,34 +793,36 @@ Sitemap: ${url.origin}/sitemap.xml
 \x1b[36m│\x1b[0m Discord — @zeqqqe                       \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m and I have accumulated over 13        \x1b[36m│\x1b[0m
 \x1b[36m│\x1b[0m Email — mailto:contact@zeqqe.dev        \x1b[36m│\x1b[0m\x1b[36m│\x1b[0m Gigabytes of Linux live ISOs.         \x1b[36m│\x1b[0m
 \x1b[36m└─────────────────────────────────────────┘\x1b[0m\x1b[36m└───────────────────────────────────────┘\x1b[0m
-\x1b[0m \x1B[8m My BitLocker Recovery key is: 579803-112480-608321-455987-234091-789012\x1B[0m
+\x1b[0m  % Curl-able Links:
+curl zeqqe.dev/linktree
+   — \x1b[3mReturns URLs to all my profiles.\x1b[23m
 `;
 
-      return new Response(textContent, {
-        headers: {
-          "Content-Type": "text/plain",
-        },
-      });
-    } else {
-      return new Response(htmlContent, {
-        headers: {
-          "Content-Type": "text/html",
-        },
-      });
+            return new Response(textContent, {
+                headers: {
+                    "Content-Type": "text/plain",
+                },
+            });
+        } else {
+            return new Response(htmlContent, {
+                headers: {
+                    "Content-Type": "text/html",
+                },
+            });
+        }
+    } else if (url.pathname === "/copyleft.html") {
+        return new Response(copyleftContent, {
+            headers: {
+                "Content-Type": "text/html",
+            },
+        });
+    } else if (url.pathname === "/funding.html") {
+        return new Response(fundingContent, {
+            headers: {
+                "Content-Type": "text/html",
+            },
+        });
     }
-  } else if (url.pathname === "/copyleft.html") {
-    return new Response(copyleftContent, {
-      headers: {
-        "Content-Type": "text/html",
-      },
-    });
-  } else if (url.pathname === "/funding.html") {
-    return new Response(fundingContent, {
-      headers: {
-        "Content-Type": "text/html",
-      },
-    });
-  }
 
-  return new Response("404, Not Found. The page you requested is invalid :/", { status: 404 });
+    return new Response("404, Not Found. The page you requested is invalid :/", { status: 404 });
 }
