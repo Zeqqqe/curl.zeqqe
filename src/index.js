@@ -749,7 +749,7 @@ Sitemap: ${url.origin}/sitemap.xml
      
 \x1b[0m                                                                     Time: ${formattedDateTime}
 
-\x1b[36m┌──────────────────────────────────────────────────────────────────┐\x1b[0m
+\x1b[36m┌──────────────────────────────────────────────────────────────────────┐\x1b[0m
 `;
         
         const longestName = Object.keys(linktreeLinks).reduce(
@@ -759,7 +759,7 @@ Sitemap: ${url.origin}/sitemap.xml
             asciiArt += `\x1b[36m│\x1b[0m ${name.padEnd(longestName)} — ${link.padEnd(50)} \x1b[36m│\x1b[0m\n`;
         }
 
-        asciiArt += `\x1b[36m└──────────────────────────────────────────────────────────────────┘\x1b[0m`;
+        asciiArt += `\x1b[36m└──────────────────────────────────────────────────────────────────────┘\x1b[0m`;
 
         return new Response(asciiArt, {
             headers: {
