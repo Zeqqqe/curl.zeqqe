@@ -4,7 +4,7 @@ const htmlContent = `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>zeqqe.dev – Portfolio</title>
-  <link rel="icon" href="https://www.kernel.org/theme/images/logos/favicon.png" type="image/png" />
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/81/Grub_logo_large.png" type="image/png" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -245,7 +245,7 @@ const copyleftContent = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>zeqqe.dev – Copyleft</title>
 
-  <link rel="icon" href="https://www.kernel.org/theme/images/logos/favicon.png" type="image/png" />
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/81/Grub_logo_large.png" type="image/png" />
 
   <link
     rel="stylesheet"
@@ -464,8 +464,8 @@ const fundingContent = `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>zeqqe.dev – Funding</title>
-
-  <link rel="icon" href="https://www.kernel.org/theme/images/logos/favicon.png" type="image/png" />
+ 
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/81/Grub_logo_large.png" type="image/png" />
 
   <link
     rel="stylesheet"
