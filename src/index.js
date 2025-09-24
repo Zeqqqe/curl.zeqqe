@@ -170,7 +170,7 @@ const htmlContent = `<!DOCTYPE html>
       </ul>
       <p>
         <em>Site source code:</em>
-        <a href="https://github.com/Zeqqqe/zeqqe.github.io" target="_blank">Zeqqqe/zeqqe.github.io</a>
+        <a href="https://github.com/Zeqqqe/curl.zeqqe target="_blank">Zeqqqe/curl.zeqqe</a>
       </p>
     </section>
     <section id="contact">
